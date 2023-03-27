@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/styles.css" type="text/css" rel="stylesheet">
+    <script src="/script.js" defer ></script>
     <title>tally app</title>
 </head>
 <body>
     <header class="header">
-        <h1>Tally Count</h1>
+        <h1 class="header_title">Tally Count</h1>
     </header>
 
-    <aside>
+    <!-- <aside class="controls">
         <label>
             <span>Display</span>
             <select>
@@ -31,19 +32,19 @@
         </label>
 
         <button>Settings</button>
-    </aside>
+    </aside> -->
 
     <main class="counter">
         <input class="counter__value" readonly value="10">
 
         <div class="counter__action">
-            <button class="counter__button counter__button_first">-</button>
-            <button class="counter__button">+</button>
+            <button data-key="substract" class="counter__button counter__button_first">-</button>
+            <button data-key="add" class="counter__button">+</button>
         </div>
     </main>
 
-    <footer>
-        Inspired by <a href="https://tallycount.app/">Tally Count</a>. This is merely a practice for JavaScript.
+    <footer class="footer">
+        Inspired by <a class="footer_link" href="https://tallycount.app/">Tally Count</a>. This is merely a practice for learning JavaScript.
     </footer>
 </body>
 </html>
