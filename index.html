@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" type="text" rel="stylesheet">
+    <link href="/styles.css" type="text/css" rel="stylesheet">
     <title>tally app</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Tally Count</h1>
     </header>
 
-    <div>
+    <aside>
         <label>
             <span>Display</span>
             <select>
@@ -29,6 +29,16 @@
                 <option>Counter 3</option>
             </select>
         </label>
-    </div>
+
+        <button>Settings</button>
+    </aside>
+
+    <main class="counter">
+        <input class="counter__value" readonly value="10">
+        <div class="counter__actions">
+            <button class="counter__button">-</button>
+            <button class="counter__button">+</button>
+        </div>
+    </main>
 </body>
 </html>
