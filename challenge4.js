@@ -1,5 +1,5 @@
-let year = 2050
-let status = 'parent'
+let year = 2050 //changed the date to the year
+let status = 'parent' //changed the status from student to parent
 let count = 0
 
 if (year) {
@@ -9,6 +9,8 @@ if (year) {
 	console.log( date, 'Family Day')
 	console.log( date, 'Freedom Day')
 	count = count + 4
+
+    //changed the date to year, replaced the let keyword count 
 
 	if (status == "student") {
 	  console.log('June', 'Youth Day')
@@ -20,6 +22,8 @@ if (year) {
 	date = 'December'
 	console.log(date, 'Day of Reconciliation')
 	count = count + 3
+
+    //changed the date to year, replaced the let keyword count 
 
 	if (status == "parent") {
 	  console.log(date, 'Christmas Day')
