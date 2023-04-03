@@ -1,14 +1,14 @@
-let year = 2050 //changed the date to the year
-let status = 'parent' //changed the status from student to parent
+const date = 2050 //changed the date to the year
+const status = 'parent' //changed the status from student to parent
 let count = 0
 
-if (year) {
+if (date) {
 	console.log("January", 'New Year’s Day')
 	console.log("March", 'Human Rights Day')
     let date = 'April'
 	console.log( date, 'Family Day')
 	console.log( date, 'Freedom Day')
-	count = count + 4
+	count = + 4
 
     //changed the date to year, replaced the let keyword count 
 
@@ -35,5 +35,5 @@ if (year) {
 }
 
 console.log('Your status is:', status)
-console.log('The year is:', year)
+console.log('The year is:', date)
 console.log('The total holidays is:', count)
