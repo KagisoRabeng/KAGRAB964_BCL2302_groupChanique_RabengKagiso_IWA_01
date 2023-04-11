@@ -20,14 +20,7 @@ if (location === 'RSA') {
 		shipping = location === 'NAM'? 600 : 800
 		currency = '$'
 	}
-
-	if (location = 'NAM' && customers < 2) {
-		shipping = null
-		let currency = '$'
-		}
-		else {
-			shipping = 600
-		}
+ 
 			
 		if (shipping = 0 && customers !== 1) { console.log(FREE_WARNING) }
 		location = 'NK'
