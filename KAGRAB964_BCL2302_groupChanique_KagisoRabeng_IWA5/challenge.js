@@ -12,19 +12,31 @@ let shirts = 150 * NONE_SELECTED
 let batteries = 35 * 2
 let pens = 5 * NONE_SELECTED
 
+
 if (location === 'RSA') {
-		shipping = 400
-		currency = 'R'
-	} 
-	else {
-		shipping = location === 'NAM'? 600 : 800
-		currency = '$'
-	}
- 
-			
-		if (shipping = 0 && customers !== 1) { console.log(FREE_WARNING) }
-		location = 'NK'
+    currency = 'R'
+    shipping = 400
+  } else if (location === 'NAM') {
+    currency = '$'
+    shipping = 600
+  } else if (location === 'NK') {
+    shipping = null  
+    currency = null
+    console.log(BANNED_WARNING);
+  } else {
+    currency = '$'
+    shipping = 800
+  }
 
-		if (location) {console.log(BANNED_WARNING)}
 
-console.log('price', currency, shoes + batteries + pens + shirts + toys + shipping)
+const totalPrice = toys + shoes + batteries + pens + shirts
+const totalCost = totalPrice + shipping
+if (totalPrice >= 1000 && (location === 'RSA' || location === 'NAM')) {  //added the value of 1000
+        if(customers === 1) {
+            shipping = 0
+        } else {
+            console.log(FREE_WARNING)
+        }
+}
+console.log('price', currency,totalCost)
+
