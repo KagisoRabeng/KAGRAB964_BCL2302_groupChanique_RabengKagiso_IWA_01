@@ -1,33 +1,33 @@
 
-const 1-root = document.getElementsByClassName("order1");
-const 1-biscuits = document.querySelector(".biscuits");
-const 1-donuts = document.querySelector("donuts");
-const 1-pancakes = document.querySelector("pancakes");
-const 1-status = document.querySelector("status");
+const order1 = document.querySelector('[data-key="order1"]');
+const order1biscuits = order1.querySelector('.biscuits .count');
+const order1donuts = order1.querySelector("donuts .count");
+const order1pancakes = order1.querySelector("pancakes .count");
+const order1status = order1.querySelector(".status dd");
 
-const 2-root = document.querySelector("order2");
-const 2-biscuits: document.querySelector("biscuits");
-const 2-donuts: document.querySelector("donuts");
-const 2-pancakes: document.querySelector("pancakes");
-const 2-status: document.querySelector("status");
+const order2 = document.querySelector('[data-key="order2"]');
+const order2biscuits = order2.querySelector(".biscuits .count");
+const order2donuts = order2.querySelector(".donuts .count");
+const order2pancakes = order2.querySelector(".pancakes .count");
+const order2status = order2.querySelector(".status dd");
 
-const 3-root = document.querySelector("order3");
-const 3-biscuits: document.querySelector("biscuits");
-const 3-donuts: document.querySelector("donuts");
-const 3-pancakes: document.querySelector("pancakes");
-const 3-status: document.querySelector("status");
+const order3 = document.querySelector('[data-key="order3"]');
+const order3biscuits = order3.querySelector(".biscuits .count");
+const order3donuts = order3.querySelector(".donuts .count");
+const order3pancakes = order3.querySelector(".pancakes .count");
+const order3status = order3.querySelector(".status dd");
 
-1-biscuits= 1-root.biscuits,
-1-donuts = 1-root.donuts,
-1-pancakes = 1-root.pancakes,
-1-status = 1-root.status ? Delivered : Pending
+biscuits1.innerText = order1.dataset.biscuits
+donuts1.innerText = order1.dataset.donuts 
+pancakes1.innerText = order1.dataset.pancakes
+status1.innerText = order1.status = order1.status ? Delivered : Pending
 
-2-biscuits= 2-root.biscuits,
-2-donuts = 2-root.donuts,
-2-pancakes = 2-root.pancakes,
-2-status = 2-root.status ? Delivered : Pending
+biscuits2.innerText = order2.dataset.biscuits
+donuts2.innerText = order2.dataset.donuts 
+pancakes2.innerText = order2.dataset.pancakes
+status2.innerText = order2.status = order2.status ? Delivered : Pending
 
-3-biscuits= 3-root.biscuits,
-3-donuts = 3-root.donuts,
-3-pancakes = 3-root.pancakes,
-3-status = 3-root.status ? Delivered : Pending 
+biscuits3.innerText = order3.dataset.biscuits
+donuts3.innerText = order3.dataset.donuts
+pancakes3.innerText = order3.dataset.pancakes
+status3.innerText = order3.status = order3.status ? Delivered : Pending 
