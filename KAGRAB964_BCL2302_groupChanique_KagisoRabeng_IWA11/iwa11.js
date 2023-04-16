@@ -20,14 +20,14 @@ const status3 = order3.querySelector('.status dd');
 biscuits1.innerText = order1.dataset.biscuits
 donuts1.innerText = order1.dataset.donuts 
 pancakes1.innerText = order1.dataset.pancakes
-status1.innerText = order1.status ? Delivered : Pending
+status1.innerText = order1.dataset.status = false ? "Delivered" : "Pending";
 
 biscuits2.innerText = order2.dataset.biscuits
 donuts2.innerText = order2.dataset.donuts 
 pancakes2.innerText = order2.dataset.pancakes
-status2.innerText = order2.status = order2.status ? Delivered : Pending
+status2.innerText = order2.dataset.status = false ? "Delivered" : "Pending";
 
-biscuits3.innerText = biscuits3.dataset.biscuits
+biscuits3.innerText = order3.dataset.biscuits
 donuts3.innerText = order3.dataset.donuts
 pancakes3.innerText = order3.dataset.pancakes
-status3.innerText = order3.status = order3.status ? Delivered : Pending 
+status3.innerText = order3.dataset.status = true ? "Delivered" : "Pending"; 
