@@ -27,35 +27,61 @@ const STATUS_MAP = {
 
 // Edit below line 
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+const book1 = {
+    status : document.querySelector('#book1 .status'),
+    reserve : document.querySelector('#book1 .reserve'),
+    checkout : document.querySelector('#book1 .checkout'),
+    checkin : document.querySelector('#book1 .checkin'),
+}
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+const book2 = {
+    status : document.querySelector('#book2 .status'),
+    reserve : document.querySelector('#book2 .reserve'),
+    checkout : document.querySelector('#book2 .checkout'),
+    checkin : document.querySelector('#book2 .checkin'),
+}
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+const book3 = {
+    status : document.querySelector('#book3 .status'),
+    reserve : document.querySelector('#book3 .reserve'),
+    checkout : document.querySelector('#book3 .checkout'),
+    checkin : document.querySelector('#book3 .checkin'),
+}
 
-checkin.0.color = none
-status.0.style.color = STATUS_MAP.status.color
-reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.0 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+book1.checkin.style.filter = 'grayscale(100%)'; //diables the button. filter CSS
+book1.status.style.color = STATUS_MAP.overdue.color;
+book1.reserve.disabled= !STATUS_MAP.overdue.canReserve;
+book1.checkout.disabled = !STATUS_MAP.overdue.canCheckout;
+book1.checkin.disabled= !STATUS_MAP.overdue.canCheckIn;
 
-checkin.1.color = none
-status.1.style.color = STATUS_MAP.status.color
-reserve.1 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.1 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.1 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+book2.checkin.style.filter = 'grayscale(100%)';
+book2.status.style.color = STATUS_MAP.reserved.color;
+book2.reserve.disabled = !STATUS_MAP.reserved.canReserve; //sets the disabled property of the button to false'
 
-checkin.2.color = none
-status.2.style.color = STATUS_MAP.status.color
-reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+book2.checkout.disabled = !STATUS_MAP.reserved.canCheckout;
+book2.checkin.disabled = !STATUS_MAP.reserved.canCheckIn;
+
+book3.checkin.style.filter = 'grayscale(100%)';
+book3.status.style.color = STATUS_MAP.shelf.color;
+book3.reserve.disabled = !STATUS_MAP.shelf.canReserve; 
+book3.checkout.disabled = !STATUS_MAP.shelf.canCheckout
+book3.checkin.disabled = !STATUS_MAP.shelf.canCheckIn;
+
+
+// book1.checkin.filter = 'grayscale(100%)'
+// book1.status.style.color = STATUS_MAP.status.color
+// book1.reserve.style = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
+// book1.checkout.style = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
+// book1.checkin.style = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+
+// book2.checkin.style.color = none
+// book2.status.style.color = STATUS_MAP.status.color
+// book2.reserve.1 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
+// book2.checkout.1 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
+// book2.checkin.1 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+
+// book3.checkin.2.color = none
+// book3.status.2.style.color = STATUS_MAP.status.color
+// book3.reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
+// book3.checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
+// book3.checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
