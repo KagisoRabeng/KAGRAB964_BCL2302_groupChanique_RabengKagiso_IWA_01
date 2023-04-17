@@ -59,6 +59,7 @@ const update= { name: 'X-mas Day' ,date:(`25 December ${currentYear}`)}
 correctDate = new Date(update.date)
 correctDate.setHours(0)
 correctDate.setMinutes(0)
+
 //console.log(update)
 isEarlier = copied.date !== correctDate || correctDate
 console.log('New date is earlier:' ,isEarlier)
@@ -66,8 +67,10 @@ if(isEarlier) {copied.date !== correctDate}
 console.log('ID change:' ,correctDate > holidays[6].date)
 console.log('Name changed:' ,update.name)
 console.log(`Date change: ${correctDate.getDate()}/${(correctDate.getMonth()+1)}/${correctDate.getFullYear()}`)
+
 //Fixing a day of reconciliation
 let dayOfReconciliation = new Date(holidays[0].date);
+
 //console.log (dayOfReconciliation)
 const firstHolidayTimestamp = Math.min(
     dayOfReconciliation,
@@ -79,6 +82,7 @@ const firstHolidayTimestamp = Math.min(
     holidays[6].date,
     holidays[7].date,
     holidays[8].date,)
+
 //console.log(firstHolidayTimestamp)
 let minDate = new Date(firstHolidayTimestamp)
 console.log('First Holiday:' ,minDate.toLocaleDateString("en-ZA"))
@@ -93,13 +97,9 @@ const lastHolidayTimestamp = Math.max(
     holidays[7].date,
     holidays[8].date,)
 
-//console.log(lastHolidayTimestamp)
 let maxDate= new Date(lastHolidayTimestamp)
 console.log('lastHoliday:' ,maxDate.toLocaleDateString("en-ZA")) //
-//const firstDay = new Date(firstHolidayTimestamp) .getDate()
-//const firstMonth =new Date(firstHolidayTimestamp) .getMonth()
-//const lastDay = new Date(lastHolidayTimestamp).getDate()
-//const lastMonth = new Date(lastHolidayTimestamp).getMonth()
+
 const randomHolidayIndex = Math.floor(Math.random() * 9)
 const randomHoliday = holidays[randomHolidayIndex]
 const randomHolidayDate = randomHoliday.date instanceof Date ?
