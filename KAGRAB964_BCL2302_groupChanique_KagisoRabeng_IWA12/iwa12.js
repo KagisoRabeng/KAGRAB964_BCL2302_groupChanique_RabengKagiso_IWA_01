@@ -57,7 +57,6 @@ book1.checkin.disabled= !STATUS_MAP.overdue.canCheckIn;
 book2.checkin.style.filter = 'grayscale(100%)';
 book2.status.style.color = STATUS_MAP.reserved.color;
 book2.reserve.disabled = !STATUS_MAP.reserved.canReserve; //sets the disabled property of the button to false'
-
 book2.checkout.disabled = !STATUS_MAP.reserved.canCheckout;
 book2.checkin.disabled = !STATUS_MAP.reserved.canCheckIn;
 

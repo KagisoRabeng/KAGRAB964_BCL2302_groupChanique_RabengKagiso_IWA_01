@@ -85,7 +85,7 @@ const firstHolidayTimestamp = Math.min(
 
 //console.log(firstHolidayTimestamp)
 let minDate = new Date(firstHolidayTimestamp)
-console.log('First Holiday:' ,minDate.toLocaleDateString("en-ZA"))
+console.log('First Holiday:' ,minDate.toLocaleDateString("en-ZA")) //changes the format of the date
 const lastHolidayTimestamp = Math.max(
     dayOfReconciliation,
     holidays[1].date,
@@ -98,8 +98,9 @@ const lastHolidayTimestamp = Math.max(
     holidays[8].date,)
 
 let maxDate= new Date(lastHolidayTimestamp)
-console.log('lastHoliday:' ,maxDate.toLocaleDateString("en-ZA")) //
+console.log('lastHoliday:' ,maxDate.toLocaleDateString("en-ZA")) 
 
+//random holiday is fetched
 const randomHolidayIndex = Math.floor(Math.random() * 9)
 const randomHoliday = holidays[randomHolidayIndex]
 const randomHolidayDate = randomHoliday.date instanceof Date ?
