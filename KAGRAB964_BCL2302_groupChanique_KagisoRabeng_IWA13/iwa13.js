@@ -6,24 +6,30 @@ let calculated = '1'
 
 
 const logCalc = () => { 
-  const isString = typeof calculated === 'string' 
+  const isString = typeof calculated === 'string' //removed numerical
   const calculatedAsNumber = isString ? parseInt(calculated) : calculated
   calculated = calculatedAsNumber + 1 
+}
+
+const calcUser = () => { //
+  logCalc() 
+  if (calculated > 2) user = 'John'
+  if (calculated > 2) state = 'requesting'
+  if (calculated > 3) state = 'idle'
+}
+
+const checkUser = () => {
+	if (user && state === 'requesting') {
+		console.log(`User: ${user} (${calculated})`)
+	}
 }
 
 // function logCalc(){
 //   isString = typeof calculated === 'numerical-string' 
 //   calculatedAsNumber = isString ? calculated : parseNumber(calculated)
 //   calculated = calculatedAsNumber + 1 
+// }end execution of fun
 
-// }
-
-const calcUser = () => {
-  logCalc()
-  if (calculated > 2) user = 'John'
-  if (calculated > 2) state = 'requesting'
-  if (calculated > 3) state = 'idle'
-}
 
 // function calcUser(){
 //   if(calculated < 2){
@@ -39,11 +45,7 @@ const calcUser = () => {
 //   }
 // }
 
-const checkUser = () => {
-	if (user && state === 'requesting') {
-		console.log(`User: ${user} (${calculated})`)
-	}
-}
+
 
 // function checkUser(){
 //   if(user && state === 'requesting'){
@@ -69,3 +71,4 @@ calcUser()
 
 checkUser()
 calcUser()
+

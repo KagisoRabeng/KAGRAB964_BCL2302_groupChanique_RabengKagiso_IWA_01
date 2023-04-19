@@ -19,11 +19,10 @@ function hobby (parameter) {
 // function hobby () {
 //  console(parameter)
 //  console(parameter)
-// }
-
+// variable passed into a f
 // const logTwice = () => {
 //    console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
-// }
+// }imports var in fun
 
 // logTwice()
 // logTwice()
