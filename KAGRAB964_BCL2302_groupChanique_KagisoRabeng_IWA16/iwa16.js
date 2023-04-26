@@ -64,46 +64,88 @@ const MONTHS = [
   };
   
   // Only edit below this comment
-  
+
   const createHtml = (athlete) => {
-    firstName, surname, id, races = athlete
-    [date], [time] = races.reverse()
-  
-    // const fragment = document.createDocumentFragment();
-  
-    title = document.createElement(h2);
-    title= id;
-    fragment.appendChild(title);
-  
-    const list = document.createElement(dl);
-  
-    const day = date.getDate();
-    const month = MONTHS[date.month];
-    const year = date.year;
-  
-    first, second, third, fourth = timeAsArray;
-    total = first + second + third + fourth;
-  
-    const hours = total / 60;
-    const minutes = total / hours / 60;
-  
-    list.innerHTML = /* html */ `
+    const { firstName, surname, id, races } = athlete; //declared the variables altogether
+    const { date, time } = races[races.length -1 ]; //used .length -1 to access the latest property  in race i.e date & time
+    const fragment = document.createDocumentFragment(); //fragment is ready to have nodes inserted in it
+    const title = document.createElement('h2'); //creates second heading in HTML
+
+    title.textContent = id; 
+    fragment.appendChild(title); //inserts the title in the fragment
+
+    const list = document.createElement('dl'); //creates a new HTML description list
+    const day = new Date(date).getDate();
+    const month = MONTHS[new Date(date).getMonth()];
+    const year = new Date(date).getFullYear();
+    const [fourth, third, second, first] = time; //declares the variables as time
+    const total = first + second + third + fourth;
+    const hours = Math.floor(total / 60);
+    const minutes = total % 60;
+
+    list.innerHTML = /* html */ ` 
       <dt>Athlete</dt>
-      <dd>${firstName surname}</dd>
-  
-      <dt>Total Races</dt>
-      <dd>${races}</dd>
-  
+      <dd>${firstName} ${surname}</dd>
+  <dt>Total Races</dt>
+      <dd>${races.length}</dd>
       <dt>Event Date (Latest)</dt>
-      <dd>${day month year}</dd>
-  
+      <dd>${day} ${month} ${year}</dd>
       <dt>Total Time (Latest)</dt>
-      <dd>${hours.padStart(2, 0) minutes}</dd>
-    `;
-  
+      <dd>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dd>`;
     fragment.appendChild(list);
+    return fragment;
+
+    //backticks for interpolation, definition term and details 
+    //padStart adds 0 at the beginning
   }
+  const displayAthleteData = (athleteId) => {
+    const athleteData = data.response.data[athleteId];
+    const section = document.querySelector(`[data-athlete="${athleteId}"]`);
+    section.appendChild(createHtml(athleteData));
+  }
+
+  displayAthleteData('NM372');
+  displayAthleteData('SV782');
   
-  [NM372], [SV782] = data
-  document.querySelector(NM372).appendChild(createHtml(NM372));
-  document.querySelector(SV782).appendChild(createHtml(SV782));
+  // const createHtml = (athlete) => {
+  //   firstName, surname, id, races = athlete
+  //   [date], [time] = races.reverse()
+  
+  //   // const fragment = document.createDocumentFragment();
+  
+  //   title = document.createElement(h2);
+  //   title= id;
+  //   fragment.appendChild(title);
+  
+  //   const list = document.createElement(dl);
+  
+  //   const day = date.getDate();
+  //   const month = MONTHS[date.month];
+  //   const year = date.year;
+  
+  //   first, second, third, fourth = timeAsArray;
+  //   total = first + second + third + fourth;
+  
+  //   const hours = total / 60;
+  //   const minutes = total / hours / 60;
+  
+  //   list.innerHTML = /* html */ `
+  //     <dt>Athlete</dt>
+  //     <dd>${firstName surname}</dd>
+  
+  //     <dt>Total Races</dt>
+  //     <dd>${races}</dd>
+  
+  //     <dt>Event Date (Latest)</dt>
+  //     <dd>${day month year}</dd>
+  
+  //     <dt>Total Time (Latest)</dt>
+  //     <dd>${hours.padStart(2, 0) minutes}</dd>
+  //   `;
+  
+  //   fragment.appendChild(list);
+  // }
+  
+  // [NM372], [SV782] = data
+  // document.querySelector(NM372).appendChild(createHtml(NM372));
+  // document.querySelector(SV782).appendChild(createHtml(SV782));
