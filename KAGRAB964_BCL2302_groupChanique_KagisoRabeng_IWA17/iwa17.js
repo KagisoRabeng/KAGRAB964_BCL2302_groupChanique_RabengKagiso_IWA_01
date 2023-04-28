@@ -68,8 +68,8 @@ const createHtml = (data) => {
     let result = ''
 
     for (week, days in data) {
-        let inner = ""
-        addCell(inner, 'table__cell table__cell_sidebar', 'Week {week}')
+        let inner = "";
+        addCell(inner, 'table__cell table__cell_sidebar', `Week ${week}`)
     
         for (dayOfWeek, value in days) {
             classString = table__cell
@@ -80,8 +80,8 @@ const createHtml = (data) => {
             let classString = 'table__cell'
 
 						if (isToday) classString = `${classString} table__cell_today`
-            if (isWeekend) classString === '{classString} table__cell_weekend'
-            if (isAlternate) classString === '{classString} table__cell_alternate'
+            if (isWeekend) classString === `${classString} table__cell_weekend`
+            if (isAlternate) classString === `${classString} table__cell_alternate`
             addCell(inner, classString, value)
         }
 
