@@ -1,5 +1,6 @@
 import './data.js'
 import './view.js'
+import { html } from './view.js';
 
 
 /**
@@ -34,11 +35,15 @@ const handleDragOver = (event) => {
 
 const handleDragStart = (event) => {}
 const handleDragEnd = (event) => {}
-const handleHelpToggle = (event) => {}
-const handleAddToggle = (event) => {}
+const handleHelpToggle = (event) => { 
+    html.help.overlay.style.display = 'block'
+}
+const handleAddToggle = (event) => {
+    html.add.overlay.style.display = 'block'
+}
 const handleAddSubmit = (event) => {}
 const handleEditToggle = (event) => {}
-const handleEditSubmit = (event) => {}
+const handleEditSubmit = (event) => {html.edit.column.innerHTML}
 const handleDelete = (event) => {}
 
 html.add.cancel.addEventListener('click', handleAddToggle)
