@@ -41,7 +41,7 @@ const handleHelpToggle = (event) => {
 const handleAddToggle = (event) => {
     html.add.overlay.style.display = 'block'
 }
-const handleAddSubmit = (event) => {}
+const handleAddSubmit = (event) => {html.add.overlay.getElementsByClassName()}
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {html.edit.column.innerHTML}
 const handleDelete = (event) => {}
