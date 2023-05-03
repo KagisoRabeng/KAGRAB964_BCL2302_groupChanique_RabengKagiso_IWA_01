@@ -41,9 +41,9 @@ const handleHelpToggle = (event) => {
 const handleAddToggle = (event) => {
     html.add.overlay.style.display = 'block'
 }
-const handleAddSubmit = (event) => {html.add.overlay.getElementsByClassName()}
+const handleAddSubmit = (event) => {}
 const handleEditToggle = (event) => {}
-const handleEditSubmit = (event) => {html.edit.column.innerHTML}
+const handleEditSubmit = (event) => {}
 const handleDelete = (event) => {}
 
 html.add.cancel.addEventListener('click', handleAddToggle)
@@ -66,3 +66,18 @@ for (const htmlColumn of Object.values(html.columns)) {
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver)
 }
+
+// const handleAddSubmit = (event) => {
+//     event.preventDefault();
+//     const order = {
+//       id: state.orders,
+//       title: html.add.title.value,
+//       table: html.add.table.value,
+//       created: new Date(),
+//     };
+//     const orderElement = createOrderHtml(order);
+//     html.area.ordered.append(orderElement);
+//     html.add.form.reset();
+//     html.add.overlay.close();
+//     };
+//     html.add.form.addEventListener("submit", handleAddSubmit);
