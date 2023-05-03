@@ -1,6 +1,6 @@
-import './data.js'
-import './view.js'
-import { html } from './view.js';
+import{COLUMNS,state,updateDragging,createOrderData,TABLES} from "./data.js"
+import{createOrderHtml,html,updateDraggingHtml,moveToColumn} from "./view.js"
+
 
 
 /**
@@ -35,49 +35,50 @@ const handleDragOver = (event) => {
 
 const handleDragStart = (event) => {}
 const handleDragEnd = (event) => {}
+
+
 const handleHelpToggle = (event) => { 
-    html.help.overlay.style.display = 'block'
+    html.help.overlay.toggleAttribute("open")
 }
+html.other.help.addEventListener('click', handleHelpToggle)
+html.help.cancel.addEventListener('click', handleHelpToggle)
+
 const handleAddToggle = (event) => {
-    html.add.overlay.style.display = 'block'
+    html.add.overlay.toggleAttribute("open")
 }
-const handleAddSubmit = (event) => {}
-const handleEditToggle = (event) => {}
-const handleEditSubmit = (event) => {}
-const handleDelete = (event) => {}
-
-html.add.cancel.addEventListener('click', handleAddToggle)
 html.other.add.addEventListener('click', handleAddToggle)
-html.add.form.addEventListener('submit', handleAddSubmit)
+html.add.cancel.addEventListener('click', handleAddToggle)
 
-html.other.grid.addEventListener('click', handleEditToggle)
+const handleAddSubmit = (event) => {
+         event.preventDefault();
+    const order = {
+      id: state.orders,
+      title: html.add.title.value,
+      table: html.add.table.value,
+      created: new Date(),
+    };
+    const orderElement = createOrderHtml(order);
+    html.area.ordered.append(orderElement);
+    html.add.form.reset();
+    html.add.overlay.close();
+}
+    html.add.form.addEventListener("submit", handleAddSubmit);
+
+
+ html.add.cancel.addEventListener('click', handleAddToggle)
+
+
+ const handleEditToggle = (event) => {}
 html.edit.cancel.addEventListener('click', handleEditToggle)
+
+const handleEditSubmit = (event) => {}
 html.edit.form.addEventListener('submit', handleEditSubmit)
+
+const handleDelete = (event) => {}
 html.edit.delete.addEventListener('click', handleDelete)
 
-html.help.cancel.addEventListener('click', handleHelpToggle)
-html.other.help.addEventListener('click', handleHelpToggle)
 
-for (const htmlColumn of Object.values(html.columns)) {
-    htmlColumn.addEventListener('dragstart', handleDragStart)
-    htmlColumn.addEventListener('dragend', handleDragEnd)
-}
 
-for (const htmlArea of Object.values(html.area)) {
-    htmlArea.addEventListener('dragover', handleDragOver)
-}
+html.other.grid.addEventListener('click', handleEditToggle)
 
-// const handleAddSubmit = (event) => {
-//     event.preventDefault();
-//     const order = {
-//       id: state.orders,
-//       title: html.add.title.value,
-//       table: html.add.table.value,
-//       created: new Date(),
-//     };
-//     const orderElement = createOrderHtml(order);
-//     html.area.ordered.append(orderElement);
-//     html.add.form.reset();
-//     html.add.overlay.close();
-//     };
-//     html.add.form.addEventListener("submit", handleAddSubmit);
+
