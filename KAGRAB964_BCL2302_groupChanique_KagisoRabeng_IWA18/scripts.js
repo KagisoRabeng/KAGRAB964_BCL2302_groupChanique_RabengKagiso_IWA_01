@@ -25,7 +25,8 @@ const handleDragOver = (event) => {
     if(!column) return;
     updateDragging({over : column});
     updateDraggingHtml({over:column });
-    //htmlArea.addEventListener("dragover", handleDragOver);
+
+    //Dragover;
   };
   let dragged;
   const handleDragStart = (e) => {
@@ -38,6 +39,7 @@ const handleDragOver = (event) => {
   const background = g.target.closest("section");
   background.style.backgroundColor="";
   };
+
   //attach event listeners to each column
   for (const htmlArea of Object.values(html.area)){
     htmlArea.addEventListener("dragover", handleDragOver);
@@ -45,6 +47,7 @@ const handleDragOver = (event) => {
     htmlArea.addEventListener("drop", handleDragDrop);
     htmlArea.addEventListener("dragend", handleDragEnd);
   }
+
 //----Opens Help screen -----
 const handleHelpToggle = () => {
   html.help.overlay.toggleAttribute("open");
@@ -52,7 +55,7 @@ const handleHelpToggle = () => {
 html.help.cancel.addEventListener("click", handleHelpToggle);
 html.other.help.addEventListener("click", handleHelpToggle);
 
-//------Opens Add order menu------
+//------Add order menu------
 const handleAddToggle = () => {
   html.add.overlay.toggleAttribute("open");
 };
