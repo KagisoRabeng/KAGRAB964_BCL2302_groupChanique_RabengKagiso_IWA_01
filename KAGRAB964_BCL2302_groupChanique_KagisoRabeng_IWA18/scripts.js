@@ -51,12 +51,14 @@ const handleHelpToggle = () => {
 };
 html.help.cancel.addEventListener("click", handleHelpToggle);
 html.other.help.addEventListener("click", handleHelpToggle);
+
 //------Opens Add order menu------
 const handleAddToggle = () => {
   html.add.overlay.toggleAttribute("open");
 };
 html.other.add.addEventListener("click", handleAddToggle);
 html.add.cancel.addEventListener("click", handleAddToggle);
+
 //---Submit information ----
 const handleAddSubmit = (event) => {
   event.preventDefault(); // method is used to prevent the browser from executing the default action
@@ -72,15 +74,16 @@ const handleAddSubmit = (event) => {
   html.add.overlay.close();
 };
 html.add.form.addEventListener("submit", handleAddSubmit);
-//----- Opens edit menu -----
+//----- Edit menu overlay -----
 const handleEditToggle = () => {
   html.edit.overlay.toggleAttribute("open");
 };
 html.other.grid.addEventListener("click", handleEditToggle);
 html.edit.cancel.addEventListener("click", handleEditToggle);
-//----- Submit edited information -----
+
+//----- Submitting edited information -----
 const handleEditSubmit = (event) => {
-  event.preventDefault(); // method is used to prevent the browser from executing the default action
+  event.preventDefault(); // prevents the browser from executing the default action
   const { id, title, table, created, column } = {
     title: html.edit.title.value,
     table: html.edit.table.value,
@@ -89,6 +92,7 @@ const handleEditSubmit = (event) => {
     column: html.edit.column.value,
   };
   const order = { id, title, table, created, column };
+
   // Find the index of the order to be updated
   let orderId = -1; //-1 allows us to check if an order index has been found
   // Find the order element in the HTML
@@ -100,10 +104,12 @@ const handleEditSubmit = (event) => {
   }
   // Update the order data in the state object
   state.orders[orderId] = createOrderData(order);
+
   // Update the order element with the new data
   const newOrder = createOrderHtml(order);
   const oldOrder= document.querySelector(`[data-id="${id}"]`);
   oldOrder.replaceWith(newOrder);
+
   // Move the order element to the correct column in the HTML
   switch (column) {
     case "ordered":
@@ -120,6 +126,7 @@ const handleEditSubmit = (event) => {
   }
   html.edit.overlay.close();
 };
+
 // Delete button to delete both the edit overlay and the order
 html.edit.form.addEventListener("submit", handleEditSubmit);
 const handleDelete = (event) => {
