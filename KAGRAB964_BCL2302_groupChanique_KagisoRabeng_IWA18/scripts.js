@@ -128,6 +128,7 @@ const handleEditSubmit = (event) => {
       break;
   }
   html.edit.overlay.close();
+  
 };
 
 // Delete button to delete both the edit overlay and the order
