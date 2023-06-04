@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
 * @type {boolean}
 * Indicates whether the nickname is available or not

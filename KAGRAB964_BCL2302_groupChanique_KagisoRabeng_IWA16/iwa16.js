@@ -14,6 +14,39 @@ const MONTHS = [
     'Dec',
   ]
 
+  /**
+ * @typedef {object} races
+ * @property {string} date - The date of the race.
+ * @property {number[]} time - The time of the race as an array of numbers.
+ */
+
+/**
+ * @typedef {Object.<string, { 
+ *   firstName: string,
+*   surname: string,
+*   id: string,
+*   races: races[]
+* }>} AthleteData
+*/
+
+/**
+* @typedef {object} Data
+* @property {string} requestType - Type of the request.
+* @property {string} requestBy - Method used to request the data.
+* @property {string} forDisplay - Display option(s) for the data.
+* @property {AthleteData} data - The athlete's data.
+*/
+
+/**
+* @typedef {Object} Response
+* @property {Data} response - The response object.
+*/
+
+/**
+* The data object.
+* @type {Response}
+*/
+
   const data = {
     response: {
       requestType: "FETCH_ATHLETE_DATA",
