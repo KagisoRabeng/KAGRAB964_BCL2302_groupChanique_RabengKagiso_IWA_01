@@ -43,7 +43,7 @@ const MONTHS = [
 */
 
 /**
-* The data object.
+* The object: data.
 * @type {Response}
 */
 
