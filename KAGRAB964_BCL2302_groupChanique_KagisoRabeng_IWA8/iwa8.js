@@ -13,6 +13,14 @@ const sarahPostal = '0310'
 
 // Only change below this line
 
+/**
+ * Leo's Identification
+ * @typedef {object} leo
+ * @property {string} name - Leo's name declared as a string
+ * @property {string | number} balance - Leo's balance
+ * @property {string | number} accessId - Leo's identification
+ * @property {number} age 
+ */
 const leo= {
 	name : leoName,
 	balance : leoBalance,

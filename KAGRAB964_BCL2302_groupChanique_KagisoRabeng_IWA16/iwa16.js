@@ -1,3 +1,4 @@
+
 const MONTHS = [
     'Jan',
     'Feb',
@@ -12,13 +13,13 @@ const MONTHS = [
     'Nov',
     'Dec',
   ]
-  
+
   const data = {
     response: {
       requestType: "FETCH_ATHLETE_DATA",
       requestBy: "ALL_MATCHING_ATHLETES",
-      forDisplay: "BEST_RACES",
-  
+      forDisplay: "BEST_RACES",  
+   
       data: {
         NM372: {
           firstName: "Nwabisa",
@@ -35,7 +36,7 @@ const MONTHS = [
             },
           ],
         },
-  
+
         SV782: {
           firstName: "Schalk",
           surname: "Venter",

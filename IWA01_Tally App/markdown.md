@@ -25,7 +25,7 @@ A tally count is being used to count. It increments the value by one by pressing
 
 1. Clone the repository from Github IWA01_Tally App
    ```
-   
+   https://github.com/KagisoRabeng/interactive-web-app.git
    ```
 2. Run a local host
 3. Open file `index.html`
